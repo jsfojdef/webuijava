@@ -1,0 +1,25 @@
+package com.geekbrains.lesson3;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class StartSelenium {
+    public static void main (String[] args) {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+
+
+        WebDriver driver  = new ChromeDriver();
+        driver.get("https://www.livejournal.com/login.bml?returnto=https://www.livejournal.com/&ret=1");
+        WebElement loginForm = driver.findElement(By.id ("user"));
+        loginForm.sendKeys("ALEXKOR2033");
+        driver.findElement(By.id("lj_loginwidget_password")).sendKeys("Vx2033");
+        driver.findElement(By.name("action:login")).click();
+        //[@name='action:login'][@tabindex='14']
+
+
+
+    }
+}
